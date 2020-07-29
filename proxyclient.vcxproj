@@ -152,16 +152,38 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="http-basic.cpp" />
-    <ClCompile Include="proxyclient.cpp" />
+    <ClCompile Include="ntlm-proxy\arith_base64.c" />
+    <ClCompile Include="ntlm-proxy\arith_des.c" />
+    <ClCompile Include="ntlm-proxy\arith_lm_hash.c" />
+    <ClCompile Include="ntlm-proxy\arith_ntlm_session_v2.c" />
+    <ClCompile Include="ntlm-proxy\arith_ntlm_v1.c" />
+    <ClCompile Include="ntlm-proxy\arith_ntlm_v2.c" />
+    <ClCompile Include="ntlm-proxy\arith_nt_hash.c" />
+    <ClCompile Include="ntlm-proxy\arith_util.c" />
+    <ClCompile Include="ntlm-proxy\hmac_md5.c" />
+    <ClCompile Include="ntlm-proxy\httppc_ntlm.cpp" />
+    <ClCompile Include="ntlm-proxy\md4.c" />
+    <ClCompile Include="ntlm-proxy\md5.c" />
+    <ClCompile Include="ntlm-proxy\ntlm_proxy.cpp" />
+    <ClCompile Include="ntlm-proxy\wei_util.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="socks4.cpp" />
     <ClCompile Include="socks4a.cpp" />
     <ClCompile Include="socks5.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="http-basic.h" />
+    <ClInclude Include="ntlm-proxy\arithmetic.h" />
+    <ClInclude Include="ntlm-proxy\httppc_ntlm.h" />
+    <ClInclude Include="ntlm-proxy\md.h" />
+    <ClInclude Include="ntlm-proxy\ntlm_proxy.h" />
+    <ClInclude Include="ntlm-proxy\wei_util.h" />
     <ClInclude Include="socks4.h" />
     <ClInclude Include="socks4a.h" />
     <ClInclude Include="socks5.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ntlm-proxy\README.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

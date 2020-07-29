@@ -13,11 +13,11 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="ntlm-proxy">
+      <UniqueIdentifier>{5a1e20c7-ec9e-4607-b2b6-97a6cf72aecc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="proxyclient.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="socks4.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -28,6 +28,51 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="http-basic.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ntlm-proxy\arith_base64.c">
+      <Filter>ntlm-proxy</Filter>
+    </ClCompile>
+    <ClCompile Include="ntlm-proxy\arith_des.c">
+      <Filter>ntlm-proxy</Filter>
+    </ClCompile>
+    <ClCompile Include="ntlm-proxy\arith_lm_hash.c">
+      <Filter>ntlm-proxy</Filter>
+    </ClCompile>
+    <ClCompile Include="ntlm-proxy\arith_nt_hash.c">
+      <Filter>ntlm-proxy</Filter>
+    </ClCompile>
+    <ClCompile Include="ntlm-proxy\arith_ntlm_session_v2.c">
+      <Filter>ntlm-proxy</Filter>
+    </ClCompile>
+    <ClCompile Include="ntlm-proxy\arith_ntlm_v1.c">
+      <Filter>ntlm-proxy</Filter>
+    </ClCompile>
+    <ClCompile Include="ntlm-proxy\arith_ntlm_v2.c">
+      <Filter>ntlm-proxy</Filter>
+    </ClCompile>
+    <ClCompile Include="ntlm-proxy\arith_util.c">
+      <Filter>ntlm-proxy</Filter>
+    </ClCompile>
+    <ClCompile Include="ntlm-proxy\hmac_md5.c">
+      <Filter>ntlm-proxy</Filter>
+    </ClCompile>
+    <ClCompile Include="ntlm-proxy\httppc_ntlm.cpp">
+      <Filter>ntlm-proxy</Filter>
+    </ClCompile>
+    <ClCompile Include="ntlm-proxy\md4.c">
+      <Filter>ntlm-proxy</Filter>
+    </ClCompile>
+    <ClCompile Include="ntlm-proxy\md5.c">
+      <Filter>ntlm-proxy</Filter>
+    </ClCompile>
+    <ClCompile Include="ntlm-proxy\ntlm_proxy.cpp">
+      <Filter>ntlm-proxy</Filter>
+    </ClCompile>
+    <ClCompile Include="ntlm-proxy\wei_util.cpp">
+      <Filter>ntlm-proxy</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -44,5 +89,25 @@
     <ClInclude Include="http-basic.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="ntlm-proxy\arithmetic.h">
+      <Filter>ntlm-proxy</Filter>
+    </ClInclude>
+    <ClInclude Include="ntlm-proxy\httppc_ntlm.h">
+      <Filter>ntlm-proxy</Filter>
+    </ClInclude>
+    <ClInclude Include="ntlm-proxy\md.h">
+      <Filter>ntlm-proxy</Filter>
+    </ClInclude>
+    <ClInclude Include="ntlm-proxy\ntlm_proxy.h">
+      <Filter>ntlm-proxy</Filter>
+    </ClInclude>
+    <ClInclude Include="ntlm-proxy\wei_util.h">
+      <Filter>ntlm-proxy</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ntlm-proxy\README.txt">
+      <Filter>ntlm-proxy</Filter>
+    </Text>
   </ItemGroup>
 </Project>
