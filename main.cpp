@@ -19,15 +19,15 @@
 
 SOCKET connect_proxy_server(const char* proxy_ip, unsigned short proxy_port) {
 	SOCKET sock = socket(AF_INET, SOCK_STREAM, 0);
-	if (sock == -1) {
+	if (sock == INVALID_SOCKET) {
 		printf("socket function failed with error: %d\n", GetLastError());
-		return -1;
+		return INVALID_SOCKET;
 	}
 
 	hostent* pHostent = gethostbyname(proxy_ip);
 	if (pHostent == NULL) {
 		printf("gethostbyname function failed with error: %d\n", GetLastError());
-		return -1;
+		return INVALID_SOCKET;
 	}
 
 	struct sockaddr_in servaddr = { 0 };
@@ -37,7 +37,7 @@ SOCKET connect_proxy_server(const char* proxy_ip, unsigned short proxy_port) {
 
 	if (connect(sock, (struct sockaddr*)&servaddr, sizeof(servaddr)) < 0) {
 		printf("connect function failed with error: %d\n", GetLastError());
-		return -1;
+		return INVALID_SOCKET;
 	}
 	return sock;
 }
@@ -81,7 +81,7 @@ int main()
 	{
 		printf("****** testing proxy_socks4.\n");
 		SOCKET sock = connect_proxy_server(PROXY_IP, 1080);
-		if (sock > 0) {
+		if (sock != INVALID_SOCKET) {
 			if (proxy_socks4(sock, TEST_HOST_DOMAIN, TEST_HOST_PORT)) {
 				printf("proxy_socks4 connect ok.\n");
 				if (http_request(sock)) {
@@ -105,7 +105,7 @@ int main()
 	{
 		printf("****** testing proxy_socks4A.\n");
 		SOCKET sock = connect_proxy_server(PROXY_IP, 1080);
-		if (sock > 0) {
+		if (sock != INVALID_SOCKET) {
 			if (proxy_socks4a(sock, TEST_HOST_DOMAIN, TEST_HOST_PORT)) {
 				printf("proxy_socks4A connect ok.\n");
 				if (http_request(sock)) {
@@ -129,7 +129,7 @@ int main()
 	{
 		printf("****** testing proxy_socks5.\n");
 		SOCKET sock = connect_proxy_server(PROXY_IP, 1080);
-		if (sock > 0) {
+		if (sock != INVALID_SOCKET) {
 			if (proxy_socks5(sock, TEST_HOST_DOMAIN, TEST_HOST_PORT, "test", "123456")) {
 				printf("proxy_socks5 connect ok.\n");
 				if (http_request(sock)) {
@@ -153,7 +153,7 @@ int main()
 	{
 		printf("****** testing proxy_http_basic.\n");
 		SOCKET sock = connect_proxy_server(PROXY_IP, 808);
-		if (sock > 0) {
+		if (sock != INVALID_SOCKET) {
 			if (proxy_http_basic(sock, TEST_HOST_DOMAIN, TEST_HOST_PORT, "test", "123456")) {
 				printf("proxy_http_basic connect ok.\n");
 				if (http_request(sock)) {
@@ -177,7 +177,7 @@ int main()
 	{
 		printf("****** testing proxy_http_ntlm.\n");
 		SOCKET sock = connect_proxy_server(PROXY_IP, 808);
-		if (sock > 0) {
+		if (sock != INVALID_SOCKET) {
 			if (is_ntlm_proxy_supported(PROXY_IP, 808)) {
 				if (ntlm_proxy_connected(sock, TEST_HOST_DOMAIN, TEST_HOST_PORT, PROXY_IP, 808, "test", "123456")) {
 					printf("proxy_http_ntlm connect ok.\n");
