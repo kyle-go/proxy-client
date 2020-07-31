@@ -1,15 +1,15 @@
-#pragma once
+ï»¿#pragma once
 #include <string>
 
 /*
-// base64±àÂë
+// base64ç¼–ç 
 static std::string encode(const std::string& str);
 static std::string encode(void *data, int len);
 
-// base64½âÂë£¬Èô×Ö·û´®²»±ê×¼·µ»Ø¿Õ×Ö·û´®
+// base64è§£ç ï¼Œè‹¥å­—ç¬¦ä¸²ä¸æ ‡å‡†è¿”å›ç©ºå­—ç¬¦ä¸²
 static std::string decode(const std::string& s);
 
-// ÅĞ¶Ï×Ö·û´®ÊÇ·ñÊÇ±ê×¼base64±àÂë
+// åˆ¤æ–­å­—ç¬¦ä¸²æ˜¯å¦æ˜¯æ ‡å‡†base64ç¼–ç 
 static bool is_base64_string(const char *input);
 */
 
